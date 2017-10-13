@@ -27,4 +27,11 @@ export default {
   a {
     text-decoration: none;
   }
+  input:focus {
+    outline: 0;
+  }
+  button:focus {
+    outline: 0;
+    cursor: pointer;
+  }
 </style>

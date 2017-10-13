@@ -1,13 +1,39 @@
 <template>
   <div class='login-form'>
-    你是
-    <input />
+    <div v-if="!isAuthenticated">
+      你是
+      <input v-model="username" />
+      <button @click="login" >保存</button>
+    </div>
+    <div v-else>
+      我是 {{ currentUser }}
+    </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'login-form'
+    name: 'login-form',
+    methods: {
+      login: function () {
+        if (!this.username.trim()) return
+        this.$store.commit('login', { username: this.username })
+        this.username = ''
+      }
+    },
+    data: function () {
+      return {
+        username: ''
+      }
+    },
+    computed: {
+      isAuthenticated: function () {
+        return this.$store.state.auth.isAuthenticated
+      },
+      currentUser: function () {
+        return this.$store.state.auth.currentUser
+      }
+    }
   }
 </script>
 
@@ -27,7 +53,11 @@
     font-size: 18px;
     color: rgba(0, 0, 0, 0.5);
   }
-  input:focus {
-    outline: 0;
+
+  button {
+    background-color: deeppink;
+    color: white;
+    padding: 5px 10px;
+    border: 3px;
   }
 </style>
