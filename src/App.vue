@@ -30,6 +30,13 @@ export default {
   input:focus {
     outline: 0;
   }
+  button {
+    background-color: deeppink;
+    padding: 5px 10px;
+    border: 0;
+    color: white;
+    border-radius: 3px;
+  }
   button:focus {
     outline: 0;
     cursor: pointer;
