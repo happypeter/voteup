@@ -3,11 +3,19 @@
     <div class="login-wrap">
       <login-form />
     </div>
+    <div class="list-wrap">
+      <list />
+    </div>
+    <div class="option-wrap">
+      <new-option />
+    </div>
   </div>
 </template>
 
 <script>
 import LoginForm from './LoginForm'
+import NewOption from './NewOption'
+import List from './List'
 export default {
   name: 'home',
   data () {
@@ -15,16 +23,16 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  components: { LoginForm }
+  components: { LoginForm, NewOption, List }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .home {
-    border: 2px solid yellow;
+
   }
-  .login-wrap {
+  .login-wrap, .option-wrap, .list-wrap {
     width: 90%;
     margin: 20px auto;
   }
