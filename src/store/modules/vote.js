@@ -1,7 +1,17 @@
 import axios from 'axios'
 
 const state = {
-  options: []
+  options: [],
+  votes: [
+    {
+      voter: 'happypeter',
+      optionId: '2'
+    },
+    {
+      voter: 'billie',
+      optionId: '3'
+    }
+  ]
 }
 
 const mutations = {
@@ -10,6 +20,10 @@ const mutations = {
   },
   loadOptions (state, data) {
     state.options = data.options
+  },
+  voteup (state, { vote }) {
+    console.log('mutaion', vote)
+    state.votes.push(vote)
   }
 }
 
@@ -29,6 +43,10 @@ const actions = {
         commit('loadOptions', { options: res.data })
       }
     )
+  },
+  voteup ({ commit }, vote ) {
+    console.log('action', vote)
+    commit('voteup', vote)
   }
 }
 

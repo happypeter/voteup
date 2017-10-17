@@ -5,8 +5,10 @@
         {{ option.text }}
       </div>
     </div>
-    <div class="votes" v-for="vote in votes">
-      {{ vote.voter }}
+    <div class="votes">
+      <div class="vote" v-for="vote in votes">
+        {{ vote.voter }}
+      </div>
     </div>
     <div class="action">
       <button @click="voteup"
@@ -21,13 +23,24 @@
     props: ['option', 'allVotes'],
     computed: {
       votes: function () {
-        return this.allVotes.filter(t => t.optionId == this.option.id)
+        const allVotes = this.$store.state.vote.votes
+        return allVotes.filter(t => t.optionId == this.option.id)
       }
     },
     methods: {
       voteup: function () {
+        const voted = this.votes.filter( t => t.voter === 'currentUser')
+        if (voted.length) return
         console.log('voteup', this.option.id)
         // this.votes.push({ voter: 'aaa' })
+        let vote = {
+          voter: 'currentUser',
+          optionId: this.option.id
+        }
+        this.$store.dispatch({
+          type: 'voteup',
+          vote
+        })
       }
     }
   }
