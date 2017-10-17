@@ -7,6 +7,58 @@
     {
       "text": "ddd",
       "id": 4
+    },
+    {
+      "text": "ddd",
+      "id": 5
+    },
+    {
+      "text": "sss",
+      "id": 6
+    },
+    {
+      "text": "sss",
+      "id": 7
+    },
+    {
+      "text": "www",
+      "id": 8
+    },
+    {
+      "text": "dd",
+      "id": 9
+    },
+    {
+      "text": "dd",
+      "id": 10
+    },
+    {
+      "text": "ddd",
+      "id": 11
+    },
+    {
+      "text": "ddd",
+      "id": 12
+    },
+    {
+      "text": "ddd",
+      "id": 13
+    },
+    {
+      "text": "dd",
+      "id": 14
+    },
+    {
+      "text": "ddd",
+      "id": 15
+    },
+    {
+      "text": "ddd",
+      "id": 16
+    },
+    {
+      "text": "ddd",
+      "id": 17
     }
   ],
   "votes": [
@@ -22,13 +74,12 @@
     },
     {
       "voter": "currentUser",
-      "optionId": 2,
-      "id": 3
+      "optionId": 6,
+      "id": 5
     },
     {
       "voter": "currentUser",
-      "optionId": 2,
-      "id": 4
+      "id": 6
     }
   ]
 }

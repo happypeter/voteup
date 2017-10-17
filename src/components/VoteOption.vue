@@ -11,8 +11,13 @@
       </div>
     </div>
     <div class="action">
-      <button @click="voteup"
-      class="vote-btn">投票</button>
+      <div v-if="voted">
+        <button class="vote-btn voted">已投</button>
+      </div>
+      <div v-else>
+        <button @click="voteup"
+        class="vote-btn">投票</button>
+      </div>
     </div>
   </div>
 </template>
@@ -25,11 +30,17 @@
       votes: function () {
         const allVotes = this.$store.state.vote.votes
         return allVotes.filter(t => t.optionId == this.option.id)
+      },
+      voted: function () {
+        return this.votes.filter(t => t.voter === 'currentUser').length
       }
+    },
+    created: function () {
+      console.log('creatd...this.votes', this.votes)
     },
     methods: {
       voteup: function () {
-        console.log('voteup', this.option.id)
+        if (this.voted) return
         let vote = {
           voter: 'currentUser',
           optionId: this.option.id
