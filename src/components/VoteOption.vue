@@ -29,10 +29,7 @@
     },
     methods: {
       voteup: function () {
-        const voted = this.votes.filter( t => t.voter === 'currentUser')
-        if (voted.length) return
         console.log('voteup', this.option.id)
-        // this.votes.push({ voter: 'aaa' })
         let vote = {
           voter: 'currentUser',
           optionId: this.option.id
@@ -45,7 +42,6 @@
     }
   }
 </script>
-
 
 <style scoped>
   .option {
@@ -94,5 +90,8 @@
   button.vote-btn {
     font-size: 20px;
     padding: 6px 12px;
+  }
+  button.vote-btn.voted {
+    background-color: #7dd222;
   }
 </style>

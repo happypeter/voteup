@@ -8,7 +8,6 @@
   </div>
 </template>
 
-
 <script>
 import VoteOption from './VoteOption'
 
@@ -25,6 +24,9 @@ import VoteOption from './VoteOption'
       console.log('created')
       this.$store.dispatch({
         type: 'loadOptions'
+      })
+      this.$store.dispatch({
+        type: 'loadVotes'
       })
     }
   }

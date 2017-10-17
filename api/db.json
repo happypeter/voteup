@@ -5,8 +5,30 @@
       "id": 2
     },
     {
-      "text": "宫保鸡丁",
+      "text": "ddd",
+      "id": 4
+    }
+  ],
+  "votes": [
+    {
+      "voter": "currentUser",
+      "optionId": 2,
+      "id": 1
+    },
+    {
+      "voter": "currentUser",
+      "optionId": 4,
+      "id": 2
+    },
+    {
+      "voter": "currentUser",
+      "optionId": 2,
       "id": 3
+    },
+    {
+      "voter": "currentUser",
+      "optionId": 2,
+      "id": 4
     }
   ]
 }
