@@ -71,6 +71,14 @@
     {
       "text": "好吃",
       "id": 20
+    },
+    {
+      "text": "西红柿",
+      "id": 21
+    },
+    {
+      "text": "ddddd",
+      "id": 22
     }
   ],
   "votes": [
@@ -92,6 +100,11 @@
     {
       "voter": "ddd",
       "id": 4
+    },
+    {
+      "voter": "ccc",
+      "optionId": 22,
+      "id": 5
     }
   ]
 }

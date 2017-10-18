@@ -6,8 +6,8 @@ const state = {
 }
 
 const mutations = {
-  addOption (state, text) {
-    state.options.push({ text })
+  addOption (state, data) {
+    state.options.push(data)
   },
   loadOptions (state, data) {
     state.options = data.options
@@ -40,7 +40,8 @@ const actions = {
     let data = { text }
     axios.post(`http://localhost:3008/options`, data).then(
       res => {
-        commit('addOption', text)
+        console.log(res.data)
+        commit('addOption', res.data)
       }
     )
   },
