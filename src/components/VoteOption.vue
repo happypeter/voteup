@@ -12,7 +12,8 @@
     </div>
     <div class="action">
       <div v-if="voted">
-        <button class="vote-btn voted">已投</button>
+        <button @click="undo"
+        class="vote-btn voted">已投</button>
       </div>
       <div v-else>
         <button @click="voteup"
@@ -39,6 +40,14 @@
       }
     },
     methods: {
+      undo: function () {
+        const vote = this.votes.find(t => t.voter === this.currentUser )
+        console.log('undo', vote.id)
+        this.$store.dispatch({
+          type: 'undo',
+          voteId: vote.id
+        })
+      },
       voteup: function () {
         if (this.voted || !this.currentUser) return
         let vote = {

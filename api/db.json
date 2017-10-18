@@ -59,57 +59,39 @@
     {
       "text": "ddd",
       "id": 17
+    },
+    {
+      "text": "茄子",
+      "id": 18
+    },
+    {
+      "text": "黄瓜",
+      "id": 19
+    },
+    {
+      "text": "好吃",
+      "id": 20
     }
   ],
   "votes": [
     {
-      "voter": "currentUser",
+      "voter": "ccc",
       "optionId": 2,
       "id": 1
     },
     {
-      "voter": "currentUser",
+      "voter": "ccc",
       "optionId": 4,
       "id": 2
     },
     {
-      "voter": "currentUser",
-      "optionId": 6,
-      "id": 5
-    },
-    {
-      "voter": "currentUser",
-      "id": 6
-    },
-    {
-      "voter": "currentUser",
+      "voter": "ccc",
       "optionId": 5,
-      "id": 7
-    },
-    {
-      "voter": "currentUser",
-      "optionId": 7,
-      "id": 8
+      "id": 3
     },
     {
       "voter": "ddd",
-      "optionId": 8,
-      "id": 9
-    },
-    {
-      "voter": "ddd",
-      "optionId": 8,
-      "id": 10
-    },
-    {
-      "voter": "fdd",
-      "optionId": 2,
-      "id": 11
-    },
-    {
-      "voter": "",
-      "optionId": 2,
-      "id": 12
+      "id": 4
     }
   ]
 }
