@@ -21,7 +21,6 @@ import VoteOption from './VoteOption'
     },
 
     created: function () {
-      console.log('created')
       this.$store.dispatch({
         type: 'loadOptions'
       })

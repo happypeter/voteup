@@ -32,17 +32,17 @@
         return allVotes.filter(t => t.optionId == this.option.id)
       },
       voted: function () {
-        return this.votes.filter(t => t.voter === 'currentUser').length
+        return this.votes.filter(t => t.voter === this.currentUser).length
+      },
+      currentUser: function () {
+        return this.$store.state.auth.currentUser
       }
-    },
-    created: function () {
-      console.log('creatd...this.votes', this.votes)
     },
     methods: {
       voteup: function () {
-        if (this.voted) return
+        if (this.voted || !this.currentUser) return
         let vote = {
-          voter: 'currentUser',
+          voter: this.currentUser,
           optionId: this.option.id
         }
         this.$store.dispatch({

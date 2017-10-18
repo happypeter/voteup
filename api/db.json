@@ -80,6 +80,36 @@
     {
       "voter": "currentUser",
       "id": 6
+    },
+    {
+      "voter": "currentUser",
+      "optionId": 5,
+      "id": 7
+    },
+    {
+      "voter": "currentUser",
+      "optionId": 7,
+      "id": 8
+    },
+    {
+      "voter": "ddd",
+      "optionId": 8,
+      "id": 9
+    },
+    {
+      "voter": "ddd",
+      "optionId": 8,
+      "id": 10
+    },
+    {
+      "voter": "fdd",
+      "optionId": 2,
+      "id": 11
+    },
+    {
+      "voter": "",
+      "optionId": 2,
+      "id": 12
     }
   ]
 }
