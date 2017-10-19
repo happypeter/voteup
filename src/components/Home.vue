@@ -1,13 +1,16 @@
 <template>
   <div class="home">
-    <div class="login-wrap">
+    <div class="wrap">
       <login-form />
     </div>
-    <div class="list-wrap">
+    <div class="wrap">
       <list />
     </div>
-    <div class="option-wrap">
+    <div class="wrap">
       <new-option />
+    </div>
+    <div class="wrap">
+      <result />
     </div>
   </div>
 </template>
@@ -16,6 +19,7 @@
 import LoginForm from './LoginForm'
 import NewOption from './NewOption'
 import List from './List'
+import Result from './Result'
 export default {
   name: 'home',
   data () {
@@ -23,7 +27,7 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  components: { LoginForm, NewOption, List }
+  components: { LoginForm, NewOption, List, Result }
 }
 </script>
 
@@ -32,7 +36,7 @@ export default {
   .home {
 
   }
-  .login-wrap, .option-wrap, .list-wrap {
+  .wrap {
     width: 90%;
     margin: 20px auto;
   }
