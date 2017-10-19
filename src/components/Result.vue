@@ -1,25 +1,34 @@
 <template>
   <div class="result">
-    <h1>68%</h1>
-    <svg width="100" height="100" viewBox="0 0 32 32">
-    <circle id="background"
-      r="16" cx="16" cy="16" fill="#fff" stroke="yellow" stroke-width="12" />
-    <circle id="percent"
-      r="16" cx="16" cy="16" fill="#fff" fill-opacity="0.5" stroke="deeppink" stroke-width="12" stroke-dasharray="68 100" />
-  </svg>
-  <h1>32%</h1>
-  <svg width="100" height="100" viewBox="0 0 32 32">
-  <circle id="background"
-    r="16" cx="16" cy="16" fill="#fff" stroke="yellow" stroke-width="12" />
-  <circle id="percent"
-    r="16" cx="16" cy="16" fill="#fff" fill-opacity="0.5" stroke="deeppink" stroke-width="12" stroke-dasharray="32 100" />
-</svg>
+    <div v-for="option in sortedOptions">
+      <svg-chart :percent="option.percent" />
+    </div>
   </div>
 </template>
 
 <script>
+  import SvgChart from './SvgChart'
   export default {
-    name: 'result'
+    name: 'result',
+    components: { SvgChart },
+    data: function () {
+      return {
+        sortedOptions: [
+          {
+            optionId: '3',
+            percent: 0.6
+          },
+          {
+            optionId: '5',
+            percent: 0.23
+          },
+          {
+            optionId: '4',
+            percent: 0.1
+          }
+        ]
+      }
+    }
   }
 </script>
 
@@ -35,8 +44,5 @@
     display: flex;
     flex-direction: column;
   }
-  svg {
-    border-radius: 50%;
-    transform: rotate(-90deg);
-  }
+
 </style>
