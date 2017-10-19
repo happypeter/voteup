@@ -5,80 +5,12 @@
       "id": 2
     },
     {
-      "text": "ddd",
+      "text": "宫保鸡丁",
       "id": 4
     },
     {
-      "text": "ddd",
-      "id": 5
-    },
-    {
-      "text": "sss",
-      "id": 6
-    },
-    {
-      "text": "sss",
+      "text": "烧茄子",
       "id": 7
-    },
-    {
-      "text": "www",
-      "id": 8
-    },
-    {
-      "text": "dd",
-      "id": 9
-    },
-    {
-      "text": "dd",
-      "id": 10
-    },
-    {
-      "text": "ddd",
-      "id": 11
-    },
-    {
-      "text": "ddd",
-      "id": 12
-    },
-    {
-      "text": "ddd",
-      "id": 13
-    },
-    {
-      "text": "dd",
-      "id": 14
-    },
-    {
-      "text": "ddd",
-      "id": 15
-    },
-    {
-      "text": "ddd",
-      "id": 16
-    },
-    {
-      "text": "ddd",
-      "id": 17
-    },
-    {
-      "text": "茄子",
-      "id": 18
-    },
-    {
-      "text": "黄瓜",
-      "id": 19
-    },
-    {
-      "text": "好吃",
-      "id": 20
-    },
-    {
-      "text": "西红柿",
-      "id": 21
-    },
-    {
-      "text": "ddddd",
-      "id": 22
     }
   ],
   "votes": [
@@ -94,17 +26,43 @@
     },
     {
       "voter": "ccc",
-      "optionId": 5,
+      "optionId": 4,
       "id": 3
     },
     {
       "voter": "ddd",
+      "optionId": 7,
       "id": 4
     },
     {
-      "voter": "ccc",
-      "optionId": 22,
+      "voter": "ddd",
+      "optionId": 7,
       "id": 5
+    },
+    {
+      "voter": "ddd",
+      "optionId": 4,
+      "id": 6
+    },
+    {
+      "voter": "ccc",
+      "optionId": 7,
+      "id": 7
+    },
+    {
+      "voter": "dddd",
+      "optionId": 7,
+      "id": 8
+    },
+    {
+      "voter": "dddd",
+      "optionId": 4,
+      "id": 9
+    },
+    {
+      "voter": "dddd",
+      "optionId": 2,
+      "id": 10
     }
   ]
 }

@@ -1,7 +1,8 @@
 <template>
   <div class="result">
     <div v-for="option in sortedOptions">
-      <svg-chart :percent="option.percent" />
+      <svg-chart :option="option"
+      />
     </div>
   </div>
 </template>
@@ -11,23 +12,31 @@
   export default {
     name: 'result',
     components: { SvgChart },
-    data: function () {
-      return {
-        sortedOptions: [
-          {
-            optionId: '3',
-            percent: 0.6
-          },
-          {
-            optionId: '5',
-            percent: 0.23
-          },
-          {
-            optionId: '4',
-            percent: 0.1
-          }
-        ]
+    computed: {
+      options: function () {
+        return this.$store.state.vote.options
+      },
+      votes: function () {
+        return this.$store.state.vote.votes
+      },
+      sortedOptions: function () {
+        let result =  this.options.map(
+           t => {
+             const voteCount = this.votes.filter(
+               item => item.optionId === t.id
+             ).length
+             return {
+               name: t.text,
+               id: t.id,
+               voteCount
+             }
+           }
+         )
+         return result.sort(function (a, b) {
+            return a.voteCount - b.voteCount;
+         }).slice().reverse()
       }
+
     }
   }
 </script>
