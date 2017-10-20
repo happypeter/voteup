@@ -18,15 +18,6 @@ import VoteOption from './VoteOption'
       options: function () {
         return this.$store.state.vote.options
       }
-    },
-
-    created: function () {
-      this.$store.dispatch({
-        type: 'loadOptions'
-      })
-      this.$store.dispatch({
-        type: 'loadVotes'
-      })
     }
   }
 </script>

@@ -1,19 +1,33 @@
 import axios from 'axios'
 
 const state = {
-  options: [],
-  votes: []
+  options: [
+    {
+      text: '鱼香肉丝',
+      id: 'we34s'
+    },
+    {
+      text: '宫保鸡丁',
+      id: 'res76'
+    }
+  ],
+  votes: [
+    {
+      voter: 'peter',
+      optionId: 'res76',
+      id: 'wes32'
+    },
+    {
+      voter: 'billie',
+      optionId: 'res76',
+      id: '432de'
+    }
+  ]
 }
 
 const mutations = {
   addOption (state, data) {
     state.options.push(data)
-  },
-  loadOptions (state, data) {
-    state.options = data.options
-  },
-  loadVotes (state, { votes }) {
-    state.votes = votes
   },
   voteup (state, vote) {
     console.log('mutaion', vote)
@@ -42,22 +56,6 @@ const actions = {
       res => {
         console.log(res.data)
         commit('addOption', res.data)
-      }
-    )
-  },
-  loadOptions ({ commit }) {
-    axios.get(`http://localhost:3008/options`).then(
-      res => {
-        console.log(res.data)
-        commit('loadOptions', { options: res.data })
-      }
-    )
-  },
-  loadVotes ({ commit }) {
-    axios.get(`http://localhost:3008/votes`).then(
-      res => {
-        console.log(res.data)
-        commit('loadVotes', { votes: res.data })
       }
     )
   },
