@@ -43,13 +43,8 @@ const actions = {
       commit('undo', voteId)
   },
   addOption ({ commit }, { text }) {
-    let data = { text }
-    axios.post(`http://localhost:3008/options`, data).then(
-      res => {
-        console.log(res.data)
-        commit('addOption', res.data)
-      }
-    )
+    let id = shortid.generate()
+    commit('addOption', { text, id })
   },
   voteup ({ commit }, { vote } ) {
     let data = {
