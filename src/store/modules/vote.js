@@ -1,4 +1,5 @@
 import axios from 'axios'
+import shortid from 'shortid'
 
 const state = {
   options: [
@@ -30,25 +31,16 @@ const mutations = {
     state.options.push(data)
   },
   voteup (state, vote) {
-    console.log('mutaion', vote)
     state.votes.push(vote)
   },
   undo (state, voteId) {
-    console.log('mutations', voteId)
     state.votes = state.votes.filter(t => t.id !== voteId)
   }
 }
 
 const actions = {
   undo ({ commit }, { voteId }) {
-    console.log(voteId)
-    axios.delete(`http://localhost:3008/votes/${voteId}`)
-          .then(
-            res => {
-              console.log(res.data)
-              commit('undo', voteId)
-            }
-          )
+      commit('undo', voteId)
   },
   addOption ({ commit }, { text }) {
     let data = { text }
@@ -60,14 +52,12 @@ const actions = {
     )
   },
   voteup ({ commit }, { vote } ) {
-    console.log('action', vote)
-    axios.post('http://localhost:3008/votes', vote)
-    .then(
-      res => {
-        console.log(res.data)
-        commit('voteup', res.data)
-      }
-    )
+    let data = {
+      ...vote,
+      id: shortid.generate()
+    }
+    console.log(data)
+    commit('voteup', data)
   }
 }
 
